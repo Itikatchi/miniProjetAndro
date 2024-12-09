@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">miniProjetAndro</string>
+    <string name="DescScrolView">"L'histoire est centrée sur un lycéen nommé Haruki Kitahara et de ses relations avec Setsuna Ogiso et Kazusa Touma dans le club de musique."</string>
+    <string name="ButtonUpdate">Update</string>
+    <string name="ButtonDelete">Delete</string>
+    <string name="ButtonRetour">Back</string>
 </resources>
