@@ -4,4 +4,6 @@
     <string name="ButtonUpdate">Update</string>
     <string name="ButtonDelete">Delete</string>
     <string name="ButtonRetour">Back</string>
+    <string name="AttentionDelete">Voulez vous supprimer ce manga ?</string>
+    <string name="ButtonSureDelete">Supprimer</string>
 </resources>
