@@ -4,4 +4,10 @@
     <string name="ButtonUpdate">Update</string>
     <string name="ButtonDelete">Delete</string>
     <string name="ButtonRetour">Back</string>
+
+
+    <string name="identifiant">Votre identifiant :</string>
+    <string name="motDePasse">Votre mot de passe :</string>
+    <string name="titrePageAjout">Ajoutez votre manga</string>
+    <string name="titreMainAct"></string>
 </resources>
