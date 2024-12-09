@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">miniProjetAndro</string>
+    <string name="identifiant">Votre Identifiant :</string>
+    <string name="titrePageAjout">Ajoutez votre manga</string>
 </resources>
