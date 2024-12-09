@@ -6,4 +6,5 @@
     <string name="ButtonRetour">Back</string>
     <string name="AttentionDelete">Voulez vous supprimer ce manga ?</string>
     <string name="ButtonSureDelete">Supprimer</string>
+    <string name="PageDetailManga">Detail du Manga :</string>
 </resources>
