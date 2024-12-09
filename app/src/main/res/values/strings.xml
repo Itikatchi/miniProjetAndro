@@ -9,5 +9,5 @@
     <string name="identifiant">Votre identifiant :</string>
     <string name="motDePasse">Votre mot de passe :</string>
     <string name="titrePageAjout">Ajoutez votre manga</string>
-    <string name="titreMainAct"></string>
+    <string name="titreMainAct">Bienvenue sur votre application de gestion de mangas</string>
 </resources>
