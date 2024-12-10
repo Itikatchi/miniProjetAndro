@@ -13,4 +13,5 @@
     <string name="AttentionDelete">Etes vous sur de vouloir supprimer ce manga ?</string>
     <string name="ButtonSureDelete">Supprimer</string>
     <string name="PageDetailManga">Details :</string>
+    <string name="titrePageUpdate">Mettre à jour votre manga</string>
 </resources>

@@ -10,10 +10,12 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class DetailMangaActivity extends AppCompatActivity {
     private TextView TitreTextView, AuteurTextView,NbTomeTextView,PrixTextView,ThemeTextView,GenreTextView,textViewSynopsis;
     private ImageView imageManga;
-
+    private ArrayList<Manga> mesMangas;
     private String Titre, Auteur, NbTome, Prix, Theme, Synopsis, Genre, Affiche;
     private Button ButtonUpdate,ButtonDelete,ButtonBack;
 
