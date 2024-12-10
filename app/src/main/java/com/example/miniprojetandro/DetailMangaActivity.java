@@ -16,7 +16,9 @@ public class DetailMangaActivity extends AppCompatActivity {
     private TextView TitreTextView, AuteurTextView,NbTomeTextView,PrixTextView,ThemeTextView,GenreTextView,textViewSynopsis;
     private ImageView imageManga;
     private ArrayList<Manga> mesMangas;
-    private String Titre, Auteur, NbTome, Prix, Theme, Synopsis, Genre, Affiche;
+    private ArrayList<Genre> mesGenres;
+    private String Titre, Auteur, NbTome,PrixString,Theme, Synopsis, Genre, Affiche;
+    private double Prix;
     private Button ButtonUpdate,ButtonDelete,ButtonBack;
 
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +35,8 @@ public class DetailMangaActivity extends AppCompatActivity {
         GenreTextView = (TextView) findViewById(R.id.GenreTextView);
         textViewSynopsis = (TextView) findViewById(R.id.textViewSynopsis);
         imageManga = (ImageView) findViewById(R.id.imageManga);
-
+        mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("mesMangas");
+        mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("mesGenres");
 
         Intent intent = getIntent();
         if (intent.hasExtra("titre")) {
@@ -49,8 +52,9 @@ public class DetailMangaActivity extends AppCompatActivity {
             NbTomeTextView.setText(NbTome);
         }
         if(intent.hasExtra("prix")){
-            Prix = intent.getStringExtra("prix");
-            PrixTextView.setText(Prix);
+            Prix  = Double.parseDouble(intent.getStringExtra("prix"));
+            PrixString = intent.getStringExtra("prix");
+            PrixTextView.setText(PrixString);
         }
         if(intent.hasExtra("Synopsis")){
             Synopsis = intent.getStringExtra("Synopsis");
@@ -105,7 +109,8 @@ public class DetailMangaActivity extends AppCompatActivity {
                 intent1.putExtra("Theme",Theme);
                 intent1.putExtra("Synopsis",Synopsis);
                 intent1.putExtra("Genre",Genre);
-                intent1.putExtra("Affiche",Affiche);
+                intent1.putExtra("mesMangas",mesMangas);
+                intent1.putExtra("mesGenres",mesGenres);
                 startActivity(intent1);
             }
         });
@@ -114,6 +119,8 @@ public class DetailMangaActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent1 = new Intent(DetailMangaActivity.this, DeleteActivity.class);
                 intent1.putExtra("titre", Titre);
+                intent1.putExtra("mesMangas",mesMangas);
+                intent1.putExtra("mesGenres",mesGenres);
                 startActivity(intent1);
             }
         });
@@ -121,6 +128,8 @@ public class DetailMangaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(DetailMangaActivity.this, DeleteActivity.class);
+                intent1.putExtra("mesMangas",mesMangas);
+                intent1.putExtra("mesGenres",mesGenres);
                 startActivity(intent1);
             }
         });
