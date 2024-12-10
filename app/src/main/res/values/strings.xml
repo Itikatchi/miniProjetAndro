@@ -10,4 +10,7 @@
     <string name="motDePasse">Votre mot de passe :</string>
     <string name="titrePageAjout">Ajoutez votre manga</string>
     <string name="titreMainAct">Bienvenue sur votre application de gestion de mangas</string>
+    <string name="AttentionDelete">Etes vous sur de vouloir supprimer ce manga ?</string>
+    <string name="ButtonSureDelete">Supprimer</string>
+    <string name="PageDetailManga">Details :</string>
 </resources>
