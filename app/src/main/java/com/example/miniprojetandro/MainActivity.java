@@ -18,7 +18,6 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Utilisateur> mesUti;
-    private ArrayList<Genre> mesGenres;
     private EditText editTextLog, editTextMdp;
     private Button btnConnexion;
     private boolean verif;
@@ -38,13 +37,6 @@ public class MainActivity extends AppCompatActivity {
         mesUti.add(new Utilisateur("jules", "root"));
         mesUti.add(new Utilisateur("yann", "root"));
     }
-
-    /*private void initGenre(){
-        mesGenres = new ArrayList<>();
-        mesGenres.add(new Genre("shonen"));
-        mesGenres.add(new Genre("seinen"));
-        mesGenres.add(new Genre("shojo"));
-    }*/
 
     private boolean controle(String log, String mdp){
         verif = false;
