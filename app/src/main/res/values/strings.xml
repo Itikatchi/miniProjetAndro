@@ -4,7 +4,10 @@
     <string name="ButtonUpdate">Update</string>
     <string name="ButtonDelete">Delete</string>
     <string name="ButtonRetour">Back</string>
-    <string name="AttentionDelete">Voulez vous supprimer ce manga ?</string>
-    <string name="ButtonSureDelete">Supprimer</string>
-    <string name="PageDetailManga">Detail du Manga :</string>
+
+
+    <string name="identifiant">Votre identifiant :</string>
+    <string name="motDePasse">Votre mot de passe :</string>
+    <string name="titrePageAjout">Ajoutez votre manga</string>
+    <string name="titreMainAct">Bienvenue sur votre application de gestion de mangas</string>
 </resources>
