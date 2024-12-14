@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
 
@@ -20,6 +21,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
     private Genre genre;
     private String Titre, Auteur, NbTome,PrixString,Theme, Synopsis, Genre, Affiche;
     private double Prix;
+    private Button btnAjout,ButtonBack;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailmanga);
@@ -34,6 +36,8 @@ public class UpdateMangaActivity extends AppCompatActivity {
         editTextTheme = (EditText) findViewById(R.id.editTextTheme);
         editTextDesc = (EditText) findViewById(R.id.editTextDesc);
         editTextPrix = (EditText) findViewById(R.id.editTextPrix);
+        btnAjout = (Button) findViewById(R.id.btnAjout);
+        ButtonBack = (Button) findViewById(R.id.ButtonBack);
         mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("mesMangas");
         mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("mesGenres");
 
@@ -69,7 +73,12 @@ public class UpdateMangaActivity extends AppCompatActivity {
             Theme = intent.getStringExtra("Theme");
             editTextTheme.setText(Theme);
         }
-
+        if(intent.hasExtra("Genre")){
+            Genre = intent.getStringExtra("Genre");
+        }
+        if (intent.hasExtra("affiche")){
+            Affiche = intent.getStringExtra("affiche");
+        }
 
         /// LA GESTION DU SPINNER POUR LE GENRE CONCERNER
         String genreRecu = intent.getStringExtra("Genre");
@@ -96,8 +105,34 @@ public class UpdateMangaActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-
+        ButtonBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(UpdateMangaActivity.this, DetailMangaActivity.class);
+                intent1.putExtra("titre", Titre);
+                intent1.putExtra("NbTome",NbTome);
+                intent1.putExtra("Prix",Prix);
+                intent1.putExtra("Theme",Theme);
+                intent1.putExtra("Synopsis",Synopsis);
+                intent1.putExtra("Genre",Genre);
+                intent1.putExtra("Affiche",Affiche);
+                intent1.putExtra("mesMangas",mesMangas);
+                intent1.putExtra("mesGenres",mesGenres);
+                startActivity(intent1);
+            }
+        });
+        btnAjout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(UpdateMangaActivity.this, ListMangaActivity.class);
+                intent1.putExtra("mesMangas",mesMangas);
+                intent1.putExtra("mesGenres",mesGenres);
+                startActivity(intent1);
+            }
+        });
     }
+
+
+
 
 }

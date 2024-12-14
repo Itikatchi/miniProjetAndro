@@ -109,6 +109,7 @@ public class DetailMangaActivity extends AppCompatActivity {
                 intent1.putExtra("Theme",Theme);
                 intent1.putExtra("Synopsis",Synopsis);
                 intent1.putExtra("Genre",Genre);
+                intent1.putExtra("Affiche",Affiche);
                 intent1.putExtra("mesMangas",mesMangas);
                 intent1.putExtra("mesGenres",mesGenres);
                 startActivity(intent1);
