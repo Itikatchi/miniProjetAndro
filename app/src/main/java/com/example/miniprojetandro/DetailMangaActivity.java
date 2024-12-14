@@ -23,16 +23,16 @@ public class DetailMangaActivity extends AppCompatActivity {
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailmanga);
+        setContentView(R.layout.activity_detailsmanga);
         initilialisation();
     }
     private void initilialisation() {
-        TitreTextView = (TextView) findViewById(R.id.TitreTextView); // TITRE MANGA
-        AuteurTextView = (TextView) findViewById(R.id.AuteurTextView);
-        NbTomeTextView = (TextView) findViewById(R.id.NbTomeTextView);
-        PrixTextView = (TextView) findViewById(R.id.PrixTextView);
-        ThemeTextView = (TextView) findViewById(R.id.ThemeTextView);
-        GenreTextView = (TextView) findViewById(R.id.GenreTextView);
+        TitreTextView = (TextView) findViewById(R.id.titreTextView); // TITRE MANGA
+        AuteurTextView = (TextView) findViewById(R.id.auteurTextView);
+        NbTomeTextView = (TextView) findViewById(R.id.nbTomeTextView);
+        PrixTextView = (TextView) findViewById(R.id.prixTextView);
+        ThemeTextView = (TextView) findViewById(R.id.themeTextView);
+        GenreTextView = (TextView) findViewById(R.id.genreTextView);
         textViewSynopsis = (TextView) findViewById(R.id.textViewSynopsis);
         imageManga = (ImageView) findViewById(R.id.imageManga);
         mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("mesMangas");
@@ -96,9 +96,9 @@ public class DetailMangaActivity extends AppCompatActivity {
             }
 
         }
-        ButtonUpdate =(Button)  findViewById(R.id.ButtonUpdate);
-        ButtonDelete =(Button)  findViewById(R.id.ButtonDelete);
-        ButtonBack =(Button)  findViewById(R.id.ButtonBack);
+        ButtonUpdate =(Button)  findViewById(R.id.buttonUpdate);
+        ButtonDelete =(Button)  findViewById(R.id.buttonDelete);
+        ButtonBack =(Button)  findViewById(R.id.buttonBack);
         ButtonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -24,7 +24,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
     private Button btnAjout,ButtonBack;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_detailmanga);
+        setContentView(R.layout.activity_updatemanga);
         initilialisation();
 
     }
