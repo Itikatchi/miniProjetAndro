@@ -22,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private Button btnConnexion;
     private boolean verif;
     private String log, mdp;
+    private ArrayList<Manga> mesmangas;
+    private ArrayList<Genre> mesgenres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 mdp = editTextMdp.getText().toString();
                 if (controle(log, mdp)){
                     Intent intent = new Intent(MainActivity.this, ListMangaActivity.class);
+                    intent.putExtra("MesMangas",mesmangas);
+                    intent.putExtra("MesGenre",mesgenres);
                     startActivity(intent);
                 }
                 else {
