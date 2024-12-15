@@ -18,12 +18,12 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private ArrayList<Utilisateur> mesUti;
+    private ArrayList<Manga> mesMangas;
+    private ArrayList<Genre> mesGenres;
     private EditText editTextLog, editTextMdp;
     private Button btnConnexion;
     private boolean verif;
     private String log, mdp;
-    private ArrayList<Manga> mesmangas;
-    private ArrayList<Genre> mesgenres;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
                 mdp = editTextMdp.getText().toString();
                 if (controle(log, mdp)){
                     Intent intent = new Intent(MainActivity.this, ListMangaActivity.class);
-                    intent.putExtra("MesMangas",mesmangas);
-                    intent.putExtra("MesGenre",mesgenres);
+                    intent.putExtra("MesMangas",mesMangas);
+                    intent.putExtra("MesGenre",mesGenres);
                     startActivity(intent);
                 }
                 else {
