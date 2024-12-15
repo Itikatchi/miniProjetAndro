@@ -51,6 +51,7 @@ public class ListMangaActivity extends AppCompatActivity {
         if (getIntent().getSerializableExtra("MesMangas") == null && getIntent().getSerializableExtra("MesGenre") == null){
             initGenre();
             initMangas();
+
         } else {
             mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("MesMangas");
             mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("MesGenre");
@@ -63,6 +64,15 @@ public class ListMangaActivity extends AppCompatActivity {
         ArrayAdapter adp = new ArrayAdapter(this, android.R.layout.simple_list_item_1, mesMangas.stream().map(h->h.getTitre()).collect(Collectors.toList()));
         listView.setAdapter(adp);
 
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+
+            Manga selectedManga = mesMangas.get(position);
+            Intent intent1 = new Intent(ListMangaActivity.this, DetailMangaActivity.class);
+            intent1.putExtra("mesMangas", mesMangas);
+            intent1.putExtra("mesGenres", mesGenres);
+            intent1.putExtra("selectedManga", selectedManga);
+            startActivity(intent1);
+        });
         btnAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -73,4 +83,5 @@ public class ListMangaActivity extends AppCompatActivity {
             }
         });
     }
+
 }

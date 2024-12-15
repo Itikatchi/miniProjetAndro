@@ -77,9 +77,9 @@ public class DetailMangaActivity extends AppCompatActivity {
             }
         }
 
-        ButtonUpdate =(Button)  findViewById(R.id.buttonUpdate);
-        ButtonDelete =(Button)  findViewById(R.id.buttonDelete);
-        ButtonBack =(Button)  findViewById(R.id.buttonBack);
+        ButtonUpdate = (Button) findViewById(R.id.buttonUpdate);
+        ButtonDelete = (Button) findViewById(R.id.buttonDelete);
+        ButtonBack = (Button) findViewById(R.id.buttonBack);
         ButtonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
