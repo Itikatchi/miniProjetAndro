@@ -36,14 +36,14 @@ public class ListMangaActivity extends AppCompatActivity {
 
     private void initMangas(){
         mesMangas = new ArrayList<Manga>();
-        mesMangas.add(new Manga("Nana", "Ai Yazawa", 21, (float)7.9, "romance", mesGenres.get(0)));
-        mesMangas.add(new Manga("Another", "Yukito Ayatsuji", 4, (float)8.2, "mystery", mesGenres.get(1))); // seinen
-        mesMangas.add(new Manga("White Album 2", "Fumiaki Maruto", 3, (float)8.5, "drama", mesGenres.get(2))); // shojo
-        mesMangas.add(new Manga("Naruto", "Masashi Kishimoto", 72, (float)8.0, "action", mesGenres.get(0))); // shonen
-        mesMangas.add(new Manga("Darling in the Franxx", "Code:000", 8, (float)7.5, "sci-fi", mesGenres.get(0))); // shonen
-        mesMangas.add(new Manga("Classroom of the Elite", "Shōgo Kinugasa", 11, (float)8.6, "psychological", mesGenres.get(1))); // seinen
-        mesMangas.add(new Manga("Cyberpunk: Edgerunners", "CD Projekt", 1, (float)8.7, "sci-fi", mesGenres.get(1))); // seinen
-        mesMangas.add(new Manga("Charlotte", "Jun Maeda", 6, (float)7.8, "supernatural", mesGenres.get(2))); // shojo
+        mesMangas.add(new Manga("Nana", "Ai Yazawa", 21, (float)7.9, "romance", "synopsis : Nana", mesGenres.get(0)));
+        mesMangas.add(new Manga("Another", "Yukito Ayatsuji", 4, (float)8.2, "mystery", "synopsis : another", mesGenres.get(1))); // seinen
+        mesMangas.add(new Manga("White Album 2", "Fumiaki Maruto", 3, (float)8.5, "drama","synopsis : WA2", mesGenres.get(2))); // shojo
+        mesMangas.add(new Manga("Naruto", "Masashi Kishimoto", 72, (float)8.0, "action","synopsis : naruto", mesGenres.get(0))); // shonen
+        mesMangas.add(new Manga("Darling in the Franxx", "Code:000", 8, (float)7.5, "sci-fi","synopsis : darling in the franxx", mesGenres.get(0))); // shonen
+        mesMangas.add(new Manga("Classroom of the Elite", "Shōgo Kinugasa", 11, (float)8.6, "psychological","synopsis : COTE", mesGenres.get(1))); // seinen
+        mesMangas.add(new Manga("Cyberpunk: Edgerunners", "CD Projekt", 1, (float)8.7, "sci-fi","synopsis : cyberpunk", mesGenres.get(1))); // seinen
+        mesMangas.add(new Manga("Charlotte", "Jun Maeda", 6, (float)7.8, "supernatural","charlotte", mesGenres.get(2))); // shojo
     }
 
     private void initialisation(){
@@ -67,8 +67,8 @@ public class ListMangaActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent1 = new Intent(ListMangaActivity.this, CreateActivity.class);
-                intent1.putExtra("MesMangas", mesMangas);
                 intent1.putExtra("MesGenres", mesGenres);
+                intent1.putExtra("MesMangas", mesMangas);
                 startActivity(intent1);
             }
         });

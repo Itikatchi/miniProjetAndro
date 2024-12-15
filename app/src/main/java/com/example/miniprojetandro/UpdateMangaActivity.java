@@ -34,7 +34,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
         editTextAuteur = (EditText) findViewById(R.id.editTextAuteur);
         editTextNbTomes = (EditText) findViewById(R.id.editTextNbTomes);
         editTextTheme = (EditText) findViewById(R.id.editTextTheme);
-        editTextDesc = (EditText) findViewById(R.id.editTextDesc);
+        editTextDesc = (EditText) findViewById(R.id.editTextSyno);
         //editTextPrix = (EditText) findViewById(R.id.editTextPrix);
         btnAjout = (Button) findViewById(R.id.btnAjout);
         ButtonBack = (Button) findViewById(R.id.ButtonBack);
