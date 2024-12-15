@@ -99,20 +99,20 @@ public class DetailMangaActivity extends AppCompatActivity {
         ButtonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(DetailMangaActivity.this, DeleteActivity.class);
-                intent1.putExtra("selectedManga", manga);
-                intent1.putExtra("mesMangas",mesMangas);
-                intent1.putExtra("mesGenres",mesGenres);
-                startActivity(intent1);
+                Intent intent2 = new Intent(DetailMangaActivity.this, DeleteActivity.class);
+                intent2.putExtra("selectedManga", manga);
+                intent2.putExtra("mesMangas",mesMangas);
+                intent2.putExtra("mesGenres",mesGenres);
+                startActivity(intent2);
             }
         });
         ButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(DetailMangaActivity.this, ListMangaActivity.class);
-                intent1.putExtra("mesMangas",mesMangas);
-                intent1.putExtra("mesGenres",mesGenres);
-                startActivity(intent1);
+                Intent intent3 = new Intent(DetailMangaActivity.this, ListMangaActivity.class);
+                intent3.putExtra("mesMangas",mesMangas);
+                intent3.putExtra("mesGenres",mesGenres);
+                startActivity(intent3);
             }
         });
     }

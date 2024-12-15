@@ -5,60 +5,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/AttentionTextView"
-        android:layout_width="332dp"
-        android:layout_height="71dp"
-        android:layout_marginTop="350dp"
-        android:text="@string/AttentionDelete"
-        android:textSize="24sp"
-        android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/AttentionImage"
-        app:layout_constraintVertical_bias="0.013" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/lightblue">
 
-    <ImageView
-        android:id="@+id/AttentionImage"
-        android:layout_width="371dp"
-        android:layout_height="331dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.015"
-        app:srcCompat="@drawable/attention" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/darkblue"
+            android:orientation="vertical">
 
-    <Button
-        android:id="@+id/ButtonSureDelete"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:text="@string/ButtonSureDelete"
-        android:backgroundTint="@color/Red"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@id/AttentionTextView"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="@id/AttentionTextView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
+            <TextView
+                android:id="@+id/AttentionTextView"
+                android:layout_width="339dp"
+                android:layout_height="81dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="36dp"
+                android:text="@string/AttentionDelete"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AttentionImage" />
 
-    <Button
-        android:id="@+id/ButtonBackAttention"
-        android:layout_width="130dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="150dp"
-        android:layout_marginEnd="140dp"
-        android:text="@string/ButtonRetour"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.799" />
+            <ImageView
+                android:id="@+id/AttentionImage"
+                android:layout_width="358dp"
+                android:layout_height="262dp"
+                android:layout_marginStart="26dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="26dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/attention" />
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="419dp"
+                android:layout_height="57dp"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/AttentionTextView"
+                app:srcCompat="@drawable/arc_1" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/lightblue">
+
+            <Button
+                android:id="@+id/ButtonSureDelete"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="148dp"
+                android:layout_marginTop="35dp"
+                android:layout_marginEnd="148dp"
+                android:backgroundTint="@color/darkblue"
+                android:text="@string/ButtonSureDelete"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Button
+                android:id="@+id/ButtonBackAttention"
+                android:layout_width="180dp"
+                android:layout_height="48dp"
+                android:layout_marginStart="141dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="141dp"
+                android:backgroundTint="#2196F3"
+                android:text="@string/ButtonRetour"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ButtonSureDelete" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
