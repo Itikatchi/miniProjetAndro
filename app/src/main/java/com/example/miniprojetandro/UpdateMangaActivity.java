@@ -35,7 +35,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
         editTextNbTomes = (EditText) findViewById(R.id.editTextNbTomes);
         editTextTheme = (EditText) findViewById(R.id.editTextTheme);
         editTextDesc = (EditText) findViewById(R.id.editTextDesc);
-        editTextPrix = (EditText) findViewById(R.id.editTextPrix);
+        //editTextPrix = (EditText) findViewById(R.id.editTextPrix);
         btnAjout = (Button) findViewById(R.id.btnAjout);
         ButtonBack = (Button) findViewById(R.id.ButtonBack);
         mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("mesMangas");

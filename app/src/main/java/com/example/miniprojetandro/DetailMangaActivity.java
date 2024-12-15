@@ -17,9 +17,12 @@ public class DetailMangaActivity extends AppCompatActivity {
     private ImageView imageManga;
     private ArrayList<Manga> mesMangas;
     private ArrayList<Genre> mesGenres;
-    private String Titre, Auteur, NbTome,PrixString,Theme, Synopsis, Genre, Affiche;
+    private String Titre, Auteur, NbTomeString,PrixString,Theme, Synopsis, Genre, Affiche;
     private double Prix;
+    private int NbTome;
     private Button ButtonUpdate,ButtonDelete,ButtonBack;
+
+    private Manga manga;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,6 +30,7 @@ public class DetailMangaActivity extends AppCompatActivity {
         initilialisation();
     }
     private void initilialisation() {
+
         TitreTextView = (TextView) findViewById(R.id.titreTextView); // TITRE MANGA
         AuteurTextView = (TextView) findViewById(R.id.auteurTextView);
         NbTomeTextView = (TextView) findViewById(R.id.nbTomeTextView);
@@ -39,61 +43,48 @@ public class DetailMangaActivity extends AppCompatActivity {
         mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("mesGenres");
 
         Intent intent = getIntent();
-        if (intent.hasExtra("titre")) {
-            Titre = intent.getStringExtra("titre");
-            TitreTextView.setText(Titre);
+        if (intent.hasExtra("selectedManga")){
+            manga = (Manga) intent.getSerializableExtra("selectedManga");
+            TitreTextView.setText(manga.getTitre() + " :");
+            GenreTextView.setText("Genre : " + (manga.getGenre().getLibGenre()));
+            AuteurTextView.setText(manga.getAuteur());
+            NbTomeTextView.setText(String.valueOf(manga.getNbDeTome()) + " Tome");
+            textViewSynopsis.setText(manga.getTitre());
+            ThemeTextView.setText("Theme : " + (manga.getTheme()));
+            PrixTextView.setText("Prix : " + (String.valueOf(manga.getPrix())) + " €");
+            if(manga.getTitre().equals("Another"))
+                this.imageManga.setImageResource(R.drawable.another);
+            else if (manga.getTitre().equals("Charlotte")) {
+                this.imageManga.setImageResource(R.drawable.charlotte);
+            }
+            else if (manga.getTitre().equals("Classroom of the Elite")) {
+                this.imageManga.setImageResource(R.drawable.classroomoftheelite);
+            }
+            else if (manga.getTitre().equals("Cyberpunk: Edgerunners")) {
+                this.imageManga.setImageResource(R.drawable.cyberpunk_edgerunners);
+            }
+            else if (manga.getTitre().equals("Darling in the Franxx")) {
+                this.imageManga.setImageResource(R.drawable.darling_in_the_frankxx);
+            }
+            else if (manga.getTitre().equals("Nana")) {
+                this.imageManga.setImageResource(R.drawable.nana);
+            }
+            else if (manga.getTitre().equals("Naruto")) {
+                this.imageManga.setImageResource(R.drawable.naruto);
+            }
+            else if (manga.getTitre().equals("White Album 2")) {
+                this.imageManga.setImageResource(R.drawable.white_album_2);
+            }
         }
-        if (intent.hasExtra("auteur")) {
-            Auteur = intent.getStringExtra("auteur");
-            AuteurTextView.setText(Auteur);
-        }
-        if (intent.hasExtra("nbtome")) {
-            NbTome = intent.getStringExtra("nbtome");
-            NbTomeTextView.setText(NbTome);
-        }
-        if(intent.hasExtra("prix")){
-            Prix  = Double.parseDouble(intent.getStringExtra("prix"));
-            PrixString = intent.getStringExtra("prix");
-            PrixTextView.setText(PrixString);
-        }
-        if(intent.hasExtra("Synopsis")){
-            Synopsis = intent.getStringExtra("Synopsis");
-            textViewSynopsis.setText(Synopsis);
-        }
-        if(intent.hasExtra("Genre")){
-            Genre = intent.getStringExtra("Genre");
-            GenreTextView.setText(Genre);
-        }
-        if(intent.hasExtra("Theme")){
-            Theme = intent.getStringExtra("Theme");
-            ThemeTextView.setText(Theme);
-        }
+
+
+
+
+
 
         if (intent.hasExtra("affiche")){
             Affiche = intent.getStringExtra("affiche");
-            if(Affiche.equals("another"))
-                this.imageManga.setImageResource(R.drawable.another);
-            else if (Affiche.equals("charlotte")) {
-                this.imageManga.setImageResource(R.drawable.charlotte);
-            }
-            else if (Affiche.equals("classroom")) {
-                this.imageManga.setImageResource(R.drawable.classroomoftheelite);
-            }
-            else if (Affiche.equals("cyberpunk")) {
-                this.imageManga.setImageResource(R.drawable.cyberpunk_edgerunners);
-            }
-            else if (Affiche.equals("darling")) {
-                this.imageManga.setImageResource(R.drawable.darling_in_the_frankxx);
-            }
-            else if (Affiche.equals("nana")) {
-                this.imageManga.setImageResource(R.drawable.nana);
-            }
-            else if (Affiche.equals("naruto")) {
-                this.imageManga.setImageResource(R.drawable.naruto);
-            }
-            else if (Affiche.equals("white")) {
-                this.imageManga.setImageResource(R.drawable.white_album_2);
-            }
+
 
         }
         ButtonUpdate =(Button)  findViewById(R.id.buttonUpdate);
