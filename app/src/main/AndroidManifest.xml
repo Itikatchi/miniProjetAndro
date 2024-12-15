@@ -23,6 +23,7 @@
         </activity>
         <activity android:name=".ListMangaActivity"></activity>
         <activity android:name=".DetailMangaActivity"></activity>
+        <activity android:name=".CreateActivity"></activity>
     </application>
 
 </manifest>
