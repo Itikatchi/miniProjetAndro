@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/textViewTitreManga"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -78,9 +78,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur2"
+                android:id="@+id/editTextAuteur"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="45dp"
                 android:ems="10"
@@ -107,9 +107,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur3"
+                android:id="@+id/editTextPrix"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="45dp"
                 android:ems="10"
@@ -136,7 +136,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur4"
+                android:id="@+id/editTextNbTomes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -165,9 +165,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerGenre2"
+                android:id="@+id/spinnerGenre"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="45dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -191,9 +191,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur5"
+                android:id="@+id/editTextTheme"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="45dp"
                 android:ems="10"
@@ -219,9 +219,9 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur6"
+                android:id="@+id/editTextSynopsis"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="48dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginEnd="45dp"
                 android:ems="10"
@@ -236,7 +236,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnAjout2"
+                android:id="@+id/btnUpdate"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -252,14 +252,15 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/buttonBack2"
+                android:id="@+id/buttonBack"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="25dp"
                 android:text="@string/ButtonRetour"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </LinearLayout>
