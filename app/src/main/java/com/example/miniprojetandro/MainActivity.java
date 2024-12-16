@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                 if (controle(log, mdp)){
                     Intent intent = new Intent(MainActivity.this, ListMangaActivity.class);
                     intent.putExtra("MesMangas",mesMangas);
-                    intent.putExtra("MesGenre",mesGenres);
+                    intent.putExtra("MesGenres",mesGenres);
                     startActivity(intent);
                 }
                 else {

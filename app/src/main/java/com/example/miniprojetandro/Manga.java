@@ -8,14 +8,16 @@ public class Manga implements Serializable {
     private  int nbDeTome;
     private float prix;
     private String theme;
+    private String synopsis;
     private Genre genre;
 
-    public Manga(String titre, String auteur, int nbDeTome, float prix, String theme, Genre genre) {
+    public Manga(String titre, String auteur, int nbDeTome, float prix, String theme, String synopsis, Genre genre) {
         this.titre = titre;
         this.auteur = auteur;
         this.nbDeTome = nbDeTome;
         this.prix = prix;
         this.theme = theme;
+        this.synopsis = synopsis;
         this.genre = genre;
     }
 
@@ -57,6 +59,14 @@ public class Manga implements Serializable {
 
     public void setTheme(String theme) {
         this.theme = theme;
+    }
+
+    public String getSynopsis() {
+        return synopsis;
+    }
+
+    public void setSynopsis(String synopsis) {
+        this.synopsis = synopsis;
     }
 
     public Genre getGenre() {
