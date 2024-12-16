@@ -74,7 +74,13 @@ public class CreateActivity extends AppCompatActivity {
                 prix = Float.parseFloat(editTextPrix.getText().toString());
                 tome = Integer.parseInt(editTextTome.getText().toString());
 
+                Manga manga = new Manga(titre, auteur, tome, prix, theme, syno, monGenre);
+                mesMangas.add(manga);
 
+                Intent intent1 = new Intent(CreateActivity.this, ListMangaActivity.class);
+                intent1.putExtra("MesGenres", mesGenres);
+                intent1.putExtra("MesMangas", mesMangas);
+                startActivity(intent1);
             }
         });
 
