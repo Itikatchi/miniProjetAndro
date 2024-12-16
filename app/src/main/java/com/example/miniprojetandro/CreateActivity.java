@@ -87,7 +87,10 @@ public class CreateActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent intent1 = new Intent(CreateActivity.this, ListMangaActivity.class);
+                intent1.putExtra("MesGenres", mesGenres);
+                intent1.putExtra("MesMangas", mesMangas);
+                startActivity(intent1);
             }
         });
     }
