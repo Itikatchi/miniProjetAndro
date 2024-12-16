@@ -12,6 +12,7 @@ import android.widget.Spinner;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.stream.Collectors;
 
 public class UpdateMangaActivity extends AppCompatActivity {
@@ -22,24 +23,52 @@ public class UpdateMangaActivity extends AppCompatActivity {
     private Genre genre;
     private String Titre, Auteur, NbTome,PrixString,Theme, Synopsis, Genre, Affiche;
     private double Prix;
-    private Button btnAjout,ButtonBack;
+    private Button btnAjout,btnBack;
+    private Manga manga;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatemanga);
-       // initialisation();
+        initialisation();
 
     }
-  /*  public void initialisation() {
+    protected void initUpdatemanga() {
+        titre = editTextTitre.getText().toString();
+        auteur = editTextAuteur.getText().toString();
+        theme = editTextTheme.getText().toString();
+        syno = editTextDesc.getText().toString();
+        prix = Float.parseFloat(editTextPrix.getText().toString());
+        tome = Integer.parseInt(editTextNbTomes.getText().toString());
+
+        Manga manga = new Manga(titre, auteur, tome, prix, theme, syno, genre);
+
+        for (int i = 0; i < mesMangas.size(); i++) {
+            Manga manga1 = mesMangas.get(i);
+            if (manga.getTitre().equals(manga1.getTitre())) {
+                mesMangas.set(i,manga);
+                break;
+            }
+        }
+    }
+    public void initialisation() {
+
         Intent intent = getIntent();
-        editTextTitre = (EditText) findViewById(R.id.editTextTitre);
-        editTextAuteur = (EditText) findViewById(R.id.editTextAuteur);
-        editTextTome = (EditText) findViewById(R.id.editTextNbTomes);
-        editTextPrix = (EditText) findViewById(R.id.editTextPrix);
-        editTextTheme = (EditText) findViewById(R.id.editTextTheme);
-        editTextSyno = (EditText) findViewById(R.id.editTextSyno);
-        spinnerGenre = (Spinner) findViewById(R.id.spinnerGenre);
-        btnAjout = (Button) findViewById(R.id.btnAjout);
-        btnBack = (Button) findViewById(R.id.ButtonBack);
+        manga = (Manga) intent.getSerializableExtra("selectedManga");
+        editTextTitre = (EditText) findViewById(R.id.editTextTitreEdit);
+        editTextAuteur = (EditText) findViewById(R.id.editTextAuteurEdit);
+        editTextNbTomes = (EditText) findViewById(R.id.editTextNbTomesEdit);
+        editTextPrix = (EditText) findViewById(R.id.editTextPrixEdit);
+        editTextTheme = (EditText) findViewById(R.id.editTextThemeEdit);
+        editTextDesc = (EditText) findViewById(R.id.editTextSynoEdit);
+        spinnerGenre = (Spinner) findViewById(R.id.spinnerGenreEdit);
+        btnAjout = (Button) findViewById(R.id.btnAjoutEdit);
+        btnBack = (Button) findViewById(R.id.ButtonBackEdit);
+        editTextTitre.setText(manga.getTitre());
+        editTextAuteur.setText(manga.getAuteur());
+        editTextNbTomes.setText(manga.getNbDeTome());
+        editTextPrix.setText(String.valueOf(manga.getPrix()));
+        editTextTheme.setText(manga.getTheme());
+        editTextDesc.setText(manga.getSynopsis());
 
         mesGenres = (ArrayList<Genre>) intent.getSerializableExtra("MesGenres");        //jsp pk mais il n y a pas de liste
         mesMangas = (ArrayList<Manga>) intent.getSerializableExtra("MesMangas");
@@ -49,7 +78,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
         spinnerGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                monGenre = mesGenres.get(position); // On récupérer l'objet film qui correspond à celui sélectionner grâce à la position
+                genre = mesGenres.get(position); // On récupérer l'objet film qui correspond à celui sélectionner grâce à la position
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
@@ -60,18 +89,8 @@ public class UpdateMangaActivity extends AppCompatActivity {
         btnAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                titre = editTextTitre.getText().toString();
-                auteur = editTextAuteur.getText().toString();
-                theme = editTextTheme.getText().toString();
-                syno = editTextSyno.getText().toString();
-                prix = Float.parseFloat(editTextPrix.getText().toString());
-                tome = Integer.parseInt(editTextTome.getText().toString());
-
-                Manga manga = new Manga(titre, auteur, tome, prix, theme, syno, monGenre);
-                mesMangas.add(manga);
-
-                Intent intent1 = new Intent(CreateActivity.this, ListMangaActivity.class);
+                initUpdatemanga();
+                Intent intent1 = new Intent(UpdateMangaActivity.this, ListMangaActivity.class);
                 intent1.putExtra("MesGenres", mesGenres);
                 intent1.putExtra("MesMangas", mesMangas);
                 startActivity(intent1);
@@ -81,7 +100,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(CreateActivity.this, ListMangaActivity.class);
+                Intent intent1 = new Intent(UpdateMangaActivity.this, ListMangaActivity.class);
                 intent1.putExtra("MesGenres", mesGenres);
                 intent1.putExtra("MesMangas", mesMangas);
                 startActivity(intent1);
@@ -89,7 +108,6 @@ public class UpdateMangaActivity extends AppCompatActivity {
         });
     }
 
-*/
 
 
 }
