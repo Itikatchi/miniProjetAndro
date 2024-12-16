@@ -53,7 +53,7 @@ public class ListMangaActivity extends AppCompatActivity {
             initMangas();
         } else {
             mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("MesMangas");
-            mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("MesGenre");
+            mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("MesGenres");
         }
 
 

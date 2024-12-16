@@ -13,6 +13,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class CreateActivity extends AppCompatActivity {
 
@@ -46,10 +47,10 @@ public class CreateActivity extends AppCompatActivity {
         btnAjout = (Button) findViewById(R.id.btnAjout);
         btnBack = (Button) findViewById(R.id.ButtonBack);
 
-        mesGenres = (ArrayList<Genre>)getIntent().getSerializableExtra("MesGenres");        //jsp pk mais il n y a pas de liste
-        mesMangas = (ArrayList<Manga>)getIntent().getSerializableExtra("MesMangas");
+        mesGenres = (ArrayList<Genre>) intent.getSerializableExtra("MesGenres");        //jsp pk mais il n y a pas de liste
+        mesMangas = (ArrayList<Manga>) intent.getSerializableExtra("MesMangas");
 
-        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, mesGenres);
+        ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, mesGenres.stream().map(h->h.getLibGenre()).collect(Collectors.toList()));
         spinnerGenre.setAdapter(dataAdapter);
         spinnerGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
