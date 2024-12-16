@@ -20,27 +20,28 @@ public class UpdateMangaActivity extends AppCompatActivity {
     private Spinner spinnerGenre;
     private ArrayList<Manga> mesMangas;
     private ArrayList<Genre> mesGenres;
-    private Genre genre;
-    private String Titre, Auteur, NbTome,PrixString,Theme, Synopsis, Genre, Affiche;
-    private double Prix;
+    private String titre, auteur,theme, synopsis, affiche;
+    private float prix;
+    private int nbTome;
     private Button btnAjout,btnBack;
     private Manga manga;
+    private Genre monGenre;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatemanga);
-        initialisation();
+        // initialisation();
 
     }
     protected void initUpdatemanga() {
         titre = editTextTitre.getText().toString();
         auteur = editTextAuteur.getText().toString();
         theme = editTextTheme.getText().toString();
-        syno = editTextDesc.getText().toString();
+        synopsis = editTextDesc.getText().toString();
         prix = Float.parseFloat(editTextPrix.getText().toString());
-        tome = Integer.parseInt(editTextNbTomes.getText().toString());
+        nbTome = Integer.parseInt(editTextNbTomes.getText().toString());
 
-        Manga manga = new Manga(titre, auteur, tome, prix, theme, syno, genre);
+        Manga manga = new Manga(titre, auteur, nbTome, prix, theme, synopsis, monGenre);
 
         for (int i = 0; i < mesMangas.size(); i++) {
             Manga manga1 = mesMangas.get(i);
@@ -78,7 +79,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
         spinnerGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                genre = mesGenres.get(position); // On récupérer l'objet film qui correspond à celui sélectionner grâce à la position
+                monGenre = mesGenres.get(position); // On récupérer l'objet film qui correspond à celui sélectionner grâce à la position
             }
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
