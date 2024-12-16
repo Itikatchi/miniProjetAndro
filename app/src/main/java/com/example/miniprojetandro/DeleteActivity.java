@@ -10,6 +10,7 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class DeleteActivity extends AppCompatActivity {
     private Button ButtonSureDelete, ButtonBackAttention;
@@ -25,6 +26,19 @@ public class DeleteActivity extends AppCompatActivity {
         setContentView(R.layout.activity_deletemanga);
         initialisation();
     }
+
+
+    protected void initDeletemanga() {
+        Iterator<Manga> iterator = mesMangas.iterator();
+        while (iterator.hasNext()) {
+            Manga manga1 = iterator.next();
+            if (manga.getTitre().equals(manga1.getTitre())) {
+                iterator.remove(); // Supprime l'élément en toute sécurité
+                break; // Arrêter la boucle si un seul élément doit être supprimé
+            }
+        }
+    }
+
     private void initialisation(){
         ButtonSureDelete = (Button) findViewById(R.id.ButtonSureDelete);
         ButtonBackAttention = (Button) findViewById(R.id.ButtonBackAttention);
@@ -37,17 +51,10 @@ public class DeleteActivity extends AppCompatActivity {
         ButtonSureDelete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                for (int i = 0; i < mesMangas.size(); i++) {
-                    Manga manga1 = mesMangas.get(i);
-                    if (manga.getTitre().equals(manga1.getTitre())) {
-                        mesMangas.remove(i);
-                        break;
-                    }
-                }
+                initDeletemanga();
                 Intent intent1 = new Intent(DeleteActivity.this, ListMangaActivity.class);
                 intent1.putExtra("MesMangas",mesMangas);
-                intent1.putExtra("MesGenre",mesGenres);
+                intent1.putExtra("MesGenres",mesGenres);
                 startActivity(intent1);
 
             }
@@ -58,7 +65,7 @@ public class DeleteActivity extends AppCompatActivity {
                 Intent intent1 = new Intent(DeleteActivity.this, DetailMangaActivity.class);
                 intent1.putExtra("selectedManga", manga);
                 intent1.putExtra("MesMangas",mesMangas);
-                intent1.putExtra("MesGenre",mesGenres);
+                intent1.putExtra("MesGenres",mesGenres);
                 startActivity(intent1);
             }
         });

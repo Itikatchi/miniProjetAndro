@@ -48,7 +48,7 @@ public class ListMangaActivity extends AppCompatActivity {
 
     private void initialisation(){
         Intent intent = getIntent();
-        if (getIntent().getSerializableExtra("MesMangas") == null && getIntent().getSerializableExtra("MesGenre") == null){
+        if (getIntent().getSerializableExtra("MesMangas") == null && getIntent().getSerializableExtra("MesGenres") == null){
             initGenre();
             initMangas();
 
@@ -69,7 +69,6 @@ public class ListMangaActivity extends AppCompatActivity {
             Manga selectedManga = mesMangas.get(position);
             Intent intent1 = new Intent(ListMangaActivity.this, DetailMangaActivity.class);
             intent1.putExtra("MesMangas", mesMangas);
-
             intent1.putExtra("MesGenres", mesGenres);
             intent1.putExtra("selectedManga", selectedManga);
             startActivity(intent1);
@@ -77,10 +76,10 @@ public class ListMangaActivity extends AppCompatActivity {
         btnAjout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1 = new Intent(ListMangaActivity.this, CreateActivity.class);
-                intent1.putExtra("MesGenres", mesGenres);
-                intent1.putExtra("MesMangas", mesMangas);
-                startActivity(intent1);
+                Intent intent2 = new Intent(ListMangaActivity.this, CreateActivity.class);
+                intent2.putExtra("MesGenres", mesGenres);
+                intent2.putExtra("MesMangas", mesMangas);
+                startActivity(intent2);
             }
         });
     }
