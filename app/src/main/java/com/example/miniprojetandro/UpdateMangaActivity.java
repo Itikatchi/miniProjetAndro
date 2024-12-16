@@ -8,6 +8,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,7 +17,8 @@ import java.util.Iterator;
 import java.util.stream.Collectors;
 
 public class UpdateMangaActivity extends AppCompatActivity {
-    private EditText editTextTitre, editTextAuteur,editTextNbTomes,editTextTheme,editTextDesc,editTextPrix;
+    private EditText  editTextAuteur,editTextNbTomes,editTextTheme,editTextDesc,editTextPrix;
+    private TextView textViewTitreMangaEdit;
     private Spinner spinnerGenre;
     private ArrayList<Manga> mesMangas;
     private ArrayList<Genre> mesGenres;
@@ -30,11 +32,11 @@ public class UpdateMangaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_updatemanga);
-        // initialisation();
+        initialisation();
 
     }
-    protected void initUpdatemanga() {
-        titre = editTextTitre.getText().toString();
+    public void initUpdatemanga() {
+        titre = textViewTitreMangaEdit.getText().toString();
         auteur = editTextAuteur.getText().toString();
         theme = editTextTheme.getText().toString();
         synopsis = editTextDesc.getText().toString();
@@ -51,22 +53,33 @@ public class UpdateMangaActivity extends AppCompatActivity {
             }
         }
     }
+    public void posmanga(){
+        String libGenreDeLOeuvre = manga.getGenre().getLibGenre();
+        int positionGenre = 0;
+        for (int i = 0; i < mesGenres.size(); i++) {
+            if (mesGenres.get(i).getLibGenre().equals(libGenreDeLOeuvre)) {
+                positionGenre = i;
+                break;
+            }
+        }
+        spinnerGenre.setSelection(positionGenre);
+    }
     public void initialisation() {
 
         Intent intent = getIntent();
         manga = (Manga) intent.getSerializableExtra("selectedManga");
-        editTextTitre = (EditText) findViewById(R.id.editTextTitreEdit);
+        textViewTitreMangaEdit = (TextView) findViewById(R.id.textViewTitreMangaEdit);
         editTextAuteur = (EditText) findViewById(R.id.editTextAuteurEdit);
         editTextNbTomes = (EditText) findViewById(R.id.editTextNbTomesEdit);
         editTextPrix = (EditText) findViewById(R.id.editTextPrixEdit);
         editTextTheme = (EditText) findViewById(R.id.editTextThemeEdit);
-        editTextDesc = (EditText) findViewById(R.id.editTextSynoEdit);
+        editTextDesc = (EditText) findViewById(R.id.editTextSynopsisEdit);
         spinnerGenre = (Spinner) findViewById(R.id.spinnerGenreEdit);
-        btnAjout = (Button) findViewById(R.id.btnAjoutEdit);
-        btnBack = (Button) findViewById(R.id.ButtonBackEdit);
-        editTextTitre.setText(manga.getTitre());
+        btnAjout = (Button) findViewById(R.id.btnUpdateEdit);
+        btnBack = (Button) findViewById(R.id.buttonBackEdit);
+        textViewTitreMangaEdit.setText(manga.getTitre());
         editTextAuteur.setText(manga.getAuteur());
-        editTextNbTomes.setText(manga.getNbDeTome());
+        editTextNbTomes.setText(String.valueOf(manga.getNbDeTome()));
         editTextPrix.setText(String.valueOf(manga.getPrix()));
         editTextTheme.setText(manga.getTheme());
         editTextDesc.setText(manga.getSynopsis());
@@ -76,6 +89,7 @@ public class UpdateMangaActivity extends AppCompatActivity {
 
         ArrayAdapter dataAdapter = new ArrayAdapter(this, android.R.layout.simple_spinner_item, mesGenres.stream().map(h->h.getLibGenre()).collect(Collectors.toList()));
         spinnerGenre.setAdapter(dataAdapter);
+        posmanga();
         spinnerGenre.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {

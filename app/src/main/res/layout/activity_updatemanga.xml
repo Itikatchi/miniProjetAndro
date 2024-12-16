@@ -48,7 +48,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textViewTitreManga"
+                android:id="@+id/textViewTitreMangaEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -78,7 +78,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextAuteur"
+                android:id="@+id/editTextAuteurEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
@@ -107,7 +107,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextPrix"
+                android:id="@+id/editTextPrixEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
@@ -136,7 +136,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextNbTomes"
+                android:id="@+id/editTextNbTomesEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
@@ -165,7 +165,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Spinner
-                android:id="@+id/spinnerGenre"
+                android:id="@+id/spinnerGenreEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
@@ -191,7 +191,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextTheme"
+                android:id="@+id/editTextThemeEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
@@ -219,7 +219,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <EditText
-                android:id="@+id/editTextSynopsis"
+                android:id="@+id/editTextSynopsisEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="48dp"
                 android:layout_marginTop="25dp"
@@ -236,7 +236,7 @@
             android:layout_height="wrap_content">
 
             <Button
-                android:id="@+id/btnUpdate"
+                android:id="@+id/btnUpdateEdit"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
@@ -252,7 +252,7 @@
             android:layout_height="match_parent">
 
             <Button
-                android:id="@+id/buttonBack"
+                android:id="@+id/buttonBackEdit"
                 android:layout_width="180dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="25dp"
