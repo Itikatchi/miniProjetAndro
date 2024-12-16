@@ -68,8 +68,9 @@ public class ListMangaActivity extends AppCompatActivity {
 
             Manga selectedManga = mesMangas.get(position);
             Intent intent1 = new Intent(ListMangaActivity.this, DetailMangaActivity.class);
-            intent1.putExtra("mesMangas", mesMangas);
-            intent1.putExtra("mesGenres", mesGenres);
+            intent1.putExtra("MesMangas", mesMangas);
+
+            intent1.putExtra("MesGenres", mesGenres);
             intent1.putExtra("selectedManga", selectedManga);
             startActivity(intent1);
         });
